@@ -1,0 +1,41 @@
+# 🚒 Predicción de Renuncia de Voluntarios - Bomberos
+
+Aplicación web con Machine Learning para predecir la probabilidad de renuncia de voluntarios en una compañía de bomberos.
+
+## 📋 Descripción
+
+El sistema utiliza un modelo Random Forest entrenado para evaluar el riesgo de deserción de voluntarios en base a seis variables clave:
+
+- **Antigüedad** (meses como voluntario)
+- **Asistencia a entrenamientos** (porcentaje)
+- **Servicios por mes** (promedio de alarmas atendidas)
+- **Edad** (años)
+- **Ocupación** (estudiante o trabajador)
+- **Actividades sociales** (participación mensual)
+
+El modelo retorna la probabilidad de renuncia en los próximos 3 meses y una recomendación de acción.
+
+## 🛠️ Tecnologías utilizadas
+
+| Tecnología | Versión | Propósito |
+|------------|---------|-----------|
+| Python | 3.9+ | Lenguaje principal |
+| Flask | 2.3.2 | Framework web y API REST |
+| Scikit-learn | 1.3.0 | Modelo Random Forest |
+| Pandas | 2.0.3 | Manipulación de datos |
+| NumPy | 1.24.3 | Operaciones numéricas |
+| Joblib | 1.3.1 | Persistencia del modelo |
+| HTML/CSS | - | Interfaz de usuario |
+
+## 📦 Instalación y uso
+
+### Requisitos previos
+
+- Python 3.9 o superior instalado
+- Git instalado (opcional, para clonar el repositorio)
+
+### Paso 1: Clonar o descargar el repositorio
+
+```bash
+git clone https://github.com/AliroAlbanez/bomberos-ml-prediccion.git
+cd bomberos-ml-prediccion
