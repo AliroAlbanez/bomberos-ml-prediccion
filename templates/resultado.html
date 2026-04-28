@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resultado de Predicción - Bomberos</title>
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        padding: 20px;
+        background-color: #f0f2f5;
+      }
+      .container {
+        max-width: 800px;
+        margin: 50px auto;
+        background-color: white;
+        border-radius: 10px;
+        padding: 30px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+      h1 {
+        color: #c0392b;
+      }
+      .probabilidad {
+        font-size: 48px;
+        font-weight: bold;
+        margin: 20px 0;
+      }
+      .riesgo-alto {
+        font-size: 32px;
+        font-weight: bold;
+        margin: 20px 0;
+        padding: 20px;
+        border-radius: 10px;
+        background-color: #ffebee;
+        color: #c0392b;
+        border: 2px solid #c0392b;
+      }
+      .riesgo-medio {
+        font-size: 32px;
+        font-weight: bold;
+        margin: 20px 0;
+        padding: 20px;
+        border-radius: 10px;
+        background-color: #fff3e0;
+        color: #f39c12;
+        border: 2px solid #f39c12;
+      }
+      .riesgo-bajo {
+        font-size: 32px;
+        font-weight: bold;
+        margin: 20px 0;
+        padding: 20px;
+        border-radius: 10px;
+        background-color: #e8f5e9;
+        color: #27ae60;
+        border: 2px solid #27ae60;
+      }
+      .recomendacion {
+        background-color: #f9f9f9;
+        padding: 20px;
+        border-radius: 8px;
+        margin: 20px 0;
+        text-align: left;
+      }
+      button {
+        background-color: #c0392b;
+        color: white;
+        padding: 10px 30px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        margin-top: 20px;
+      }
+      button:hover {
+        background-color: #a93226;
+      }
+      .alerta {
+        background-color: #ffebee;
+        padding: 15px;
+        border-radius: 5px;
+        margin: 20px 0;
+        color: #c0392b;
+      }
+      .exito {
+        background-color: #e8f5e9;
+        padding: 15px;
+        border-radius: 5px;
+        margin: 20px 0;
+        color: #27ae60;
+      }
+      .footer {
+        margin-top: 30px;
+        font-size: 12px;
+        color: #666;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>📊 Resultado de Evaluación</h1>
+
+      <div class="probabilidad">
+        Probabilidad de renuncia: <strong>{{ probabilidad }}%</strong>
+      </div>
+
+      {% if riesgo == "ALTO" %}
+      <div class="riesgo-alto">🚨 RIESGO ALTO</div>
+      {% elif riesgo == "MEDIO" %}
+      <div class="riesgo-medio">⚠️ RIESGO MEDIO</div>
+      {% else %}
+      <div class="riesgo-bajo">✅ RIESGO BAJO</div>
+      {% endif %}
+
+      <div class="recomendacion">
+        <strong>📋 Recomendación:</strong><br />
+        {{ recomendacion }}
+      </div>
+
+      {% if prediccion == 1 %}
+      <div class="alerta">
+        <strong>⚠️ Atención:</strong> Este voluntario presenta características
+        similares a casos de renuncia. Se recomienda acción inmediata.
+      </div>
+      {% else %}
+      <div class="exito">
+        <strong>✅ Buen indicador:</strong> Este voluntario tiene perfil de
+        permanencia. Mantener seguimiento positivo.
+      </div>
+      {% endif %}
+
+      <button onclick="window.location.href = '/'">← Nueva Evaluación</button>
+
+      <div class="footer">
+        <p>
+          Sistema basado en Machine Learning - Resultados con fines preventivos
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
